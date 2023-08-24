@@ -1,0 +1,61 @@
+body{
+    
+}
+.main{
+    display: flex;
+    /* flex-wrap: wrap; */
+    border: 1px solid black;
+    justify-content: center;
+    margin-top: 10%;
+    /* height: 9em;
+    width: 7em;
+    margin-left: 1.5em; */
+}
+
+
+.lifts{
+    border: 1px solid black;
+    margin: 1em;
+   
+}
+.lift{
+    border: 1px solid red;
+    
+}
+.floor{
+    border: 1px solid black;
+    height:100px;
+    width:200px;
+    margin-left: 1em;
+    margin-right: 1em;
+    display: grid;
+    justify-content: center;
+}
+    .active{
+    border: 1px solid blue;
+    display: grid;
+    margin: auto;
+}
+
+
+.Maintenance{
+    border: 1px solid black;
+    margin: 1em;
+}
+#buttons{
+    border: 1px solid rgb(237, 24, 24);
+}
+
+.button{
+    border: 1px solid black;
+    height:100px;
+    width:200px;
+}
+.maintains{
+    border: 2px solid blue;
+    display: grid;
+    margin: auto;
+}
+
+
+
