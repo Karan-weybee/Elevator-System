@@ -19,10 +19,11 @@ for(let i=0;i<repeatLift-1;i++){
 repeat(repeatLift)
 
 lifts.style.display = 'grid';
+repeatLift=repeatLift ==0 ? 1: repeatLift;
 lifts.style.gridTemplateColumns =`repeat(${repeatLift},1fr)`;
 // console.log(((150*repeatLift)+150)/10);
 let widths=`${((150*repeatLift)+150)/10}`
-let margins=`${(108-widths)/2}`
+let margins=`${(120-widths)/2}`
 console.log(margins)
 mainEl.style.width=`${widths}em`
 mainEl.style.marginLeft=`${margins}em`
