@@ -1,6 +1,6 @@
 let lifts = document.getElementById('lifts')
 let mainEl=document.getElementById('main')
-let repeatLift=4;
+let repeatLift=1;
 function repeat(repeatLift){
     var id = 1;
 for(let i=0;i<repeatLift-1;i++){
@@ -23,6 +23,8 @@ repeatLift=repeatLift ==0 ? 1: repeatLift;
 lifts.style.gridTemplateColumns =`repeat(${repeatLift},1fr)`;
 // console.log(((150*repeatLift)+150)/10);
 let widths=`${((150*repeatLift)+150)/10}`
+var size=window.screen.width;
+console.log(size)
 let margins=`${(120-widths)/2}`
 console.log(margins)
 mainEl.style.width=`${widths}em`
