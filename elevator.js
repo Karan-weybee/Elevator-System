@@ -1,11 +1,12 @@
 let lifts = document.getElementById('lifts')
-let repeatLift=5;
+let mainEl=document.getElementById('main')
+let repeatLift=4;
 function repeat(repeatLift){
     var id = 1;
 for(let i=0;i<repeatLift-1;i++){
     id++;
     let html = `<div class="lift" id="lift${id}">
-    <div class="floor" id="lift${id}-5">5</div>
+    <div class="floor" id="lift${id}-5">5-${id}</div>
     <div class="floor" id="lift${id}-4">4</div>
     <div class="floor" id="lift${id}-3">3</div>
     <div class="floor" id="lift${id}-2">2</div>
@@ -19,3 +20,9 @@ repeat(repeatLift)
 
 lifts.style.display = 'grid';
 lifts.style.gridTemplateColumns =`repeat(${repeatLift},1fr)`;
+// console.log(((150*repeatLift)+150)/10);
+let widths=`${((150*repeatLift)+150)/10}`
+let margins=`${(108-widths)/2}`
+console.log(margins)
+mainEl.style.width=`${widths}em`
+mainEl.style.marginLeft=`${margins}em`
