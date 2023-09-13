@@ -2,24 +2,33 @@ let lifts = document.getElementById('lifts')
 let mainEl = document.getElementById('main')
 let rolar1 = document.getElementById(`rolar1`)
 
-
-let repeatLift = 1;
+var rolar1DeActive = 0;
+let repeatLift = 5;
 function repeat(repeatLift) {
     var id = 1;
     for (let i = 0; i < repeatLift - 1; i++) {
         id++;
         let html = `<div class="lift" id="lift${id}">
-    <div class="floor" id="lift${id}-5">5-${id}</div>
-    <div class="floor" id="lift${id}-4">4</div>
+    <div class="floor" id="lift${id}-5"><div id="rolar${id}" style="margin-top: 380px;"></div></div>
+    <div class="floor" id="lift${id}-4">4-${id}</div>
     <div class="floor" id="lift${id}-3">3</div>
     <div class="floor" id="lift${id}-2">2</div>
     <div class="floor" id="lift${id}-1">1</div>
-    <div class="active" id="active${id}"><input type="checkbox" name="" id="check-lift1"> </div>
+    <div class="active" id="active${id}"></div>
+    <div class="active" id="active1"><label class="switch" >
+    <input type="checkbox" id="check-lift${id}" onclick="checkBtn()">
+    <span class="slider round"></span>
+  </label>
+  </div>    
     </div>`;
         lifts.insertAdjacentHTML('afterbegin', html);
     }
 }
 repeat(repeatLift)
+// let rolar2 = document.getElementById(`rolar2`);
+// let rolar3 = document.getElementById(`rolar3`);
+// let rolar4 = document.getElementById(`rolar4`);
+// let rolar5 = document.getElementById(`rolar5`);
 
 lifts.style.display = 'grid';
 repeatLift = repeatLift == 0 ? 1 : repeatLift;
@@ -33,44 +42,101 @@ console.log(margins)
 mainEl.style.width = `${widths}em`
 mainEl.style.marginLeft = `${margins}em`
 
-var pos=null;
-var marginRolar=null;
-function slider(id) {
-    let id1 = null;
-//    let ids=Number(id);
-  
-    pos = Number(rolar1.style.marginTop.slice(0,rolar1.style.marginTop.length-2));
-    
+var pos = null;
+var marginRolar = null;
 
+// for check button in lift 
+var checkedButton=[];
+function checkBtn(){
+    checkedButton.splice(0,checkedButton.length);
+for(let i=0;i<=5;i++){
+    if(document.getElementById(`rolar${i}`) && document.getElementById(`check-lift${i}`).checked == true){
+        console.log(i,'checked')
+        checkedButton.push(i)
+
+        // let pos1 = Number(document.getElementById(`rolar${i}`).style.marginTop.slice(0, document.getElementById(`rolar${i}`).style.marginTop.length - 2));
+        // let id1=null;
+        // clearInterval(id1);
+        // id1 = setInterval(frame, 5);
+        // function frame() {
+        //     if (pos1 == 380) {
+        //         clearInterval(id1);
+        //     } else {
+        //         pos1 += 95;
+        //         document.getElementById(`rolar${i}`).style.marginTop = `${pos1}px`;
+        //         document.getElementById(`rolar${i}`).style.transitionDuration = '2s';
+        //         // console.log('position',pos)
+        //     }
+        // }
+    }
+}
+console.log(checkedButton)
+}
+
+function ischecked(id){
+    for(let i=0;i<checkedButton.length;i++){
+        if(id==checkedButton[i]){
+            return 1;
+        }
+    }
+    return 0;
+}
+
+function slider(id) {
+    id = Number(id)
+    console.log(typeof id)
     marginRolar = 95 * (5 - id);
-    console.log(pos);
-    console.log('marginrolar',marginRolar)
-    if (marginRolar <= pos) {
-        clearInterval(id1);
-        id1 = setInterval(frame, 5);
-        function frame() {
-            if (pos == marginRolar) {
-                clearInterval(id1);
-            } else {
-                pos -= 95;
-                rolar1.style.marginTop = `${pos}px`;
-                rolar1.style.transitionDuration = '2s';
-                console.log(pos)
+    let id1 = null;
+    let r_No;
+    let diff=999;
+
+ 
+
+    // if (availableRolar == 0) {
+        for (let i = 1; i <= repeatLift; i++) {
+            if (document.getElementById(`rolar${i}`)) {
+                if(!ischecked(i)){
+                let temp = Math.abs(marginRolar - Number(document.getElementById(`rolar${i}`).style.marginTop.slice(0, document.getElementById(`rolar${i}`).style.marginTop.length - 2)));
+                console.log("temp",temp)
+                console.log( Number(document.getElementById(`rolar${i}`).style.marginTop.slice(0, document.getElementById(`rolar${i}`).style.marginTop.length - 2)))
+                if (temp <= diff) {
+                    diff = temp;
+                    r_No = i;
+                }
+            }
             }
         }
-    }
-    else {
-        clearInterval(id1);
-        id1 = setInterval(frame, 5);
-        function frame() {
-            if (pos == marginRolar) {
-                clearInterval(id1);
-            } else {
-                pos += 95;
-                rolar1.style.marginTop = `${pos}px`;
-                rolar1.style.transitionDuration = '2s';
-                console.log(pos)
+        console.log(r_No)
+        pos = Number(document.getElementById(`rolar${r_No}`).style.marginTop.slice(0, document.getElementById(`rolar${r_No}`).style.marginTop.length - 2));
+        console.log(pos);
+        console.log('marginrolar', marginRolar)
+        if (marginRolar <= pos) {
+            clearInterval(id1);
+            id1 = setInterval(frame, 5);
+            function frame() {
+                if (pos == marginRolar) {
+                    clearInterval(id1);
+                } else {
+                    pos -= 95;
+                    document.getElementById(`rolar${r_No}`).style.marginTop = `${pos}px`;
+                    document.getElementById(`rolar${r_No}`).style.transitionDuration = '2s';
+                    // console.log('position',pos)
+                }
             }
         }
-    }
+        else {
+            clearInterval(id1);
+            id1 = setInterval(frame, 5);
+            function frame() {
+                if (pos == marginRolar) {
+                    clearInterval(id1);
+                } else {
+                    pos += 95;
+                    document.getElementById(`rolar${r_No}`).style.marginTop = `${pos}px`;
+                    document.getElementById(`rolar${r_No}`).style.transitionDuration = '2s';
+                    // console.log('position',pos)
+                }
+            }
+        }
+
 }
