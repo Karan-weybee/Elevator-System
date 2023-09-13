@@ -45,22 +45,21 @@
 #rolar1{
     background-color: red;
     border: 2px solid blueviolet;
-    margin-top: 383px;
     /* padding-bottom: 3px; */
     height: 95px;
     width: 150px;
-    animation-name: rolar;
-    animation-duration: 2s;
+    /* animation-name: rolar;*/
+    /* animation-duration: 2s;  */
     /* animation second = (from-to)/95 */
 }
-@keyframes rolar {
+/* @keyframes rolar {
     from{
         margin-top: 380px;
     }
     to{
         margin-top: 95px;
     }
-}
+} */
 
 .Maintenance{
     border: 1px solid black;
