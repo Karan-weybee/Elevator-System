@@ -3,8 +3,8 @@ let mainEl = document.getElementById('main')
 let rolar1 = document.getElementById(`rolar1`)
 
 var rolar1DeActive = 0;
-var numOfBtn=7;
-let repeatLift = 4;
+var numOfBtn=5;
+let repeatLift =3;
 var repeatLiftRolar=repeatLift;
 function repeat(repeatLift) {
     var id = 0;
@@ -113,7 +113,7 @@ function slider(id) {
     marginRolar = 95 * (5 - id);
     let id1 = null;
     let r_No;
-    let diff = 999;
+    let diff = 9999;
 
 
 
