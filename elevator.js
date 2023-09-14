@@ -3,13 +3,15 @@ let mainEl = document.getElementById('main')
 let rolar1 = document.getElementById(`rolar1`)
 
 var rolar1DeActive = 0;
-let repeatLift = 1;
+var numOfBtn=7;
+let repeatLift = 4;
+var repeatLiftRolar=repeatLift;
 function repeat(repeatLift) {
-    var id = 1;
-    for (let i = 0; i < repeatLift - 1; i++) {
+    var id = 0;
+    for (let i = 0; i < repeatLift; i++) {
         id++;
         let html = `<div class="lift" id="lift${id}">
-    <div class="floor" id="lift${id}-5"><div id="rolar${id}" style="margin-top: 380px;"><span id="span${id}">5</span></div></div>
+    <div class="floor" id="lift${id}-5"><div class='main_rolar' id="rolar${id}" style="margin-top: 380px;"><span class='main-span' id="span${id}">5</span></div></div>
     <div class="floor" id="lift${id}-4">4</div>
     <div class="floor" id="lift${id}-3">3</div>
     <div class="floor" id="lift${id}-2">2</div>
@@ -22,16 +24,36 @@ function repeat(repeatLift) {
   </div>    
     </div>`;
         lifts.insertAdjacentHTML('afterbegin', html);
+
+        function repeatFloor(){
+            for(let j=6;j<=numOfBtn;j++){
+        let html1=` <div class="floor" id="lift${id}-${j}">${j}</div>`;
+        document.getElementById(`lift${id}`).insertAdjacentHTML('afterbegin', html1);
+            }
+        }
+        repeatFloor();
     }
 }
 repeat(repeatLift)
+
+function repeatBtns(){
+    for(let j=6;j<=numOfBtn;j++){
+let html2=`<div class="button" id="btn${j}" >${j}<button id="${j}" class="btn" onclick="slider(id)">🔼</button></div>`;
+document.getElementById(`buttons`).insertAdjacentHTML('afterbegin', html2);
+    }
+    for(let j=5;j<numOfBtn;j++){
+        let html3=`<button id="${j}" class="btn" onclick="slider(id)">🔽</button>`;
+        document.getElementById(`btn${j}`).insertAdjacentHTML('beforeend', html3);
+            }
+}
+repeatBtns();
 // let rolar2 = document.getElementById(`rolar2`);
 // let rolar3 = document.getElementById(`rolar3`);
 // let rolar4 = document.getElementById(`rolar4`);
 // let rolar5 = document.getElementById(`rolar5`);
 
 lifts.style.display = 'grid';
-repeatLift = repeatLift == 0 ? 1 : repeatLift;
+// repeatLift = repeatLift == 0 ? 1 : repeatLift;
 lifts.style.gridTemplateColumns = `repeat(${repeatLift},1fr)`;
 // console.log(((150*repeatLift)+150)/10);
 let widths = `${((150 * repeatLift) + 150) / 10}`
@@ -49,7 +71,7 @@ var marginRolar = null;
 var checkedButton = [];
 function checkBtn() {
     checkedButton.splice(0, checkedButton.length);
-    for (let i = 0; i <= 5; i++) {
+    for (let i = 0; i <=999; i++) {
         if (document.getElementById(`rolar${i}`) && document.getElementById(`check-lift${i}`).checked == true) {
             console.log(i, 'checked')
             checkedButton.push(i)
@@ -85,6 +107,7 @@ function ischecked(id) {
 }
 
 function slider(id) {
+    let random =Math.random()*2;
     id = Number(id);
     console.log(typeof id)
     marginRolar = 95 * (5 - id);
@@ -95,16 +118,25 @@ function slider(id) {
 
 
     // if (availableRolar == 0) {
-    for (let i = 1; i <= repeatLift; i++) {
+    for (let i = 1; i <=999; i++) {
         if (document.getElementById(`rolar${i}`)) {
             if (!ischecked(i)) {
                 let temp = Math.abs(marginRolar - Number(document.getElementById(`rolar${i}`).style.marginTop.slice(0, document.getElementById(`rolar${i}`).style.marginTop.length - 2)));
                 console.log("temp", temp)
                 console.log(Number(document.getElementById(`rolar${i}`).style.marginTop.slice(0, document.getElementById(`rolar${i}`).style.marginTop.length - 2)))
+                if(random<1){
                 if (temp <= diff) {
                     diff = temp;
                     r_No = i;
                 }
+            }
+                else{
+                    if (temp <= diff) {
+                        diff = temp;
+                        r_No = i;
+                    }
+                }
+
             }
         }
     }
