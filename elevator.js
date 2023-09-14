@@ -3,7 +3,7 @@ let mainEl = document.getElementById('main')
 let rolar1 = document.getElementById(`rolar1`)
 
 var rolar1DeActive = 0;
-var numOfBtn=5;
+var numOfBtn=50;
 let repeatLift =3;
 var repeatLiftRolar=repeatLift;
 function repeat(repeatLift) {
@@ -11,7 +11,7 @@ function repeat(repeatLift) {
     for (let i = 0; i < repeatLift; i++) {
         id++;
         let html = `<div class="lift" id="lift${id}">
-    <div class="floor" id="lift${id}-5"><div class='main_rolar' id="rolar${id}" style="margin-top: 380px;"><span class='main-span' id="span${id}">5</span></div></div>
+    <div class="floor" id="lift${id}-5"><div class='main_rolar' id="rolar${id}" style="margin-top: 388px;"><span class='main-span' id="span${id}">5</span></div></div>
     <div class="floor" id="lift${id}-4">4</div>
     <div class="floor" id="lift${id}-3">3</div>
     <div class="floor" id="lift${id}-2">2</div>
@@ -81,12 +81,12 @@ function checkBtn() {
             clearInterval(id1);
             id1 = setInterval(frame, 5);
             function frame() {
-                if (pos1 == 380) {
+                if (pos1 == 388) {
                     clearInterval(id1);
                     document.getElementById(`span${i}`).style.display = 'none';
                         
                 } else {
-                    pos1 += 95;
+                    pos1 += 97;
                     document.getElementById(`rolar${i}`).style.marginTop = `${pos1}px`;
                     document.getElementById(`rolar${i}`).style.transitionDuration = '2s';
                     // console.log('position',pos)
@@ -110,7 +110,7 @@ function slider(id) {
     let random =Math.random()*2;
     id = Number(id);
     console.log(typeof id)
-    marginRolar = 95 * (5 - id);
+    marginRolar = 97 * (5 - id);
     let id1 = null;
     let r_No;
     let diff = 9999;
@@ -153,9 +153,9 @@ function slider(id) {
                 clearInterval(id1);
 
             } else {
-                pos -= 95;
+                pos -= 97;
                 document.getElementById(`rolar${r_No}`).style.marginTop = `${pos}px`;
-                document.getElementById(`rolar${r_No}`).style.transitionDuration = `${diff / 95}s`;
+                document.getElementById(`rolar${r_No}`).style.transitionDuration = `${diff / 97}s`;
                 console.log('position', pos);
 
             }
@@ -169,9 +169,9 @@ function slider(id) {
                 clearInterval(id1);
 
             } else {
-                pos += 95;
+                pos += 97;
                 document.getElementById(`rolar${r_No}`).style.marginTop = `${pos}px`;
-                document.getElementById(`rolar${r_No}`).style.transitionDuration = `${diff / 95}s`;
+                document.getElementById(`rolar${r_No}`).style.transitionDuration = `${diff / 97}s`;
                 console.log('position', pos);
 
             }
@@ -185,6 +185,6 @@ function slider(id) {
             document.getElementById(`span${r_No}`).style.display = 'block';
         }
 
-    }, diff / 95 *0.9*1000);
+    }, diff / 97 *0.9*1000);
 
 }
