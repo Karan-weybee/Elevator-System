@@ -45,53 +45,46 @@
 #rolar1{
     background-color: red;
     border: 2px solid blueviolet;
-    /* padding-bottom: 3px; */
+    /* padding-top: 2px; */
     height: 95px;
     width: 150px;
-    /* animation-name: rolar;*/
-    /* animation-duration: 2s;  */
-    /* animation second = (from-to)/95 */
+    text-align: center;
+}
+#span1,#span2,#span3,#span4,#span5 {
+    display: none;
 }
 #rolar2{
     background-color: red;
     border: 2px solid blueviolet;
-    /* padding-bottom: 3px; */
+    /* padding-top: 2px; */
     height: 95px;
     width: 150px;
-    /* animation-name: rolar;*/
-    /* animation-duration: 2s;  */
-    /* animation second = (from-to)/95 */
+    text-align: center;
 }
 #rolar3{
     background-color: red;
     border: 2px solid blueviolet;
-    /* padding-bottom: 3px; */
+    /* padding-top: 2px; */
     height: 95px;
     width: 150px;
-    /* animation-name: rolar;*/
-    /* animation-duration: 2s;  */
-    /* animation second = (from-to)/95 */
+    text-align: center;
 }
 #rolar4{
     background-color: red;
     border: 2px solid blueviolet;
-    /* padding-bottom: 3px; */
+    /* padding-top: 2px; */
     height: 95px;
     width: 150px;
-    /* animation-name: rolar;*/
-    /* animation-duration: 2s;  */
-    /* animation second = (from-to)/95 */
+    text-align: center;
 }
 
 #rolar5{
     background-color: red;
     border: 2px solid blueviolet;
-    /* padding-bottom: 3px; */
+    /* padding-top: 2px; */
     height: 95px;
     width: 150px;
-    /* animation-name: rolar;*/
-    /* animation-duration: 2s;  */
-    /* animation second = (from-to)/95 */
+    text-align: center;
 }
 /* @keyframes rolar {
     from{
