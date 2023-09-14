@@ -1,11 +1,48 @@
+
 let lifts = document.getElementById('lifts')
 let mainEl = document.getElementById('main')
 let rolar1 = document.getElementById(`rolar1`)
 
 var rolar1DeActive = 0;
-var numOfBtn=50;
-let repeatLift =3;
+var numOfBtn=5;
+var repeatLift =3;
 var repeatLiftRolar=repeatLift;
+
+function numOfLifts()
+{
+    let ans = document.getElementById('numOfFloor').value;
+    let ans1 = document.getElementById('numOfLifts').value;
+    numOfBtn=ans;
+    repeatLift=ans1;
+    while (lifts .hasChildNodes()){
+        lifts.removeChild(lifts .firstChild)
+    }
+    lifts.style.display = 'grid';
+    // repeatLift = repeatLift == 0 ? 1 : repeatLift;
+    lifts.style.gridTemplateColumns = `repeat(${repeatLift},1fr)`;
+    // console.log(((150*repeatLift)+150)/10);
+    let widths = `${((150 * repeatLift) + 150) / 10}`
+    var size = window.screen.width;
+    console.log(size)
+    let margins = `${(120 - widths) / 2}`
+    console.log(margins)
+    mainEl.style.width = `${widths}em`
+    mainEl.style.marginLeft = `${margins}em`
+
+    repeat(repeatLift);
+if(numOfBtn<5 || repeatLift<3){
+    alert("default floor is 5 and Default lifts is 3!!")
+    location.reload();
+}
+    for(let j=5;j<9999;j++){
+        if( document.getElementById(`btn${j}`)){
+        document.getElementById(`btn${j}`).remove()
+        }
+    }
+
+    repeatBtns();
+
+}
 function repeat(repeatLift) {
     var id = 0;
     for (let i = 0; i < repeatLift; i++) {
@@ -37,7 +74,7 @@ function repeat(repeatLift) {
 repeat(repeatLift)
 
 function repeatBtns(){
-    for(let j=6;j<=numOfBtn;j++){
+    for(let j=5;j<=numOfBtn;j++){
 let html2=`<div class="button" id="btn${j}" >${j}<button id="${j}" class="btn" onclick="slider(id)">🔼</button></div>`;
 document.getElementById(`buttons`).insertAdjacentHTML('afterbegin', html2);
     }
@@ -113,7 +150,7 @@ function slider(id) {
     marginRolar = 97 * (5 - id);
     let id1 = null;
     let r_No;
-    let diff = 9999;
+    let diff = 99999;
 
 
 

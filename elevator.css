@@ -4,7 +4,7 @@
     /* flex-wrap: wrap; */
     border: 1px solid black;
     justify-content: center;
-    margin-top: 10%;
+    margin-top: 5%;
     background-color: #006266;
     /* height: 9em; */
     width:30em;
@@ -13,13 +13,13 @@
 
 
 .lifts{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin: 1em;
     background-color: #006266;
    
 }
 .lift{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     background-color: #B1E2FF;
     margin-left: 1em;
     color: white;
@@ -27,7 +27,8 @@
     
 }
 .floor{
-    border: 1px solid black;
+    border: 1px solid #B1E2FF;
+    /* border: 1px solid black; */
     height:95px;
     width:150px;
     margin-left: 2em;
@@ -37,7 +38,7 @@
     color: #B1E2FF;
 }
 .active{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     display: grid;
     margin: auto;
     background-color: #006266;
@@ -64,39 +65,6 @@
 .main-span{
     display: none;
 }
-#rolar2{
-    background-color: red;
-    border: 2px solid blueviolet;
-    /* padding-top: 2px; */
-    height: 95px;
-    width: 150px;
-    text-align: center;
-}
-#rolar3{
-    background-color: red;
-    border: 2px solid blueviolet;
-    /* padding-top: 2px; */
-    height: 95px;
-    width: 150px;
-    text-align: center;
-}
-#rolar4{
-    background-color: red;
-    border: 2px solid blueviolet;
-    /* padding-top: 2px; */
-    height: 95px;
-    width: 150px;
-    text-align: center;
-}
-
-#rolar5{
-    background-color: red;
-    border: 2px solid blueviolet;
-    /* padding-top: 2px; */
-    height: 95px;
-    width: 150px;
-    text-align: center;
-}
 /* @keyframes rolar {
     from{
         margin-top: 380px;
@@ -111,9 +79,7 @@
     margin: 1em;
     color: white;
 }
-#buttons{
-    border: 1px solid rgb(237, 24, 24);
-}
+
 
 .button{
     border: 1px solid black;
@@ -122,7 +88,7 @@
     text-align: center;
 }
 .maintains{
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     display: grid;
     margin: auto;
     text-align: center;

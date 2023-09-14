@@ -8,11 +8,20 @@
 
 <body>
     <div class="All">
-        <!-- <header class="">
-            <span class="fs-4">Elevator System</span>
-        </header> -->
-
+        <header class="" style="text-align: center;">
+            <span class="fs-4"><h1>Elevator System</h1></span>
+            <div class="numOfFloor">
+                <input type="number" min="5" max="1000" name="" id="numOfFloor" placeholder="Number of Floor" style="width: 200px;">
+                <!-- <button onclick="numOfFloor()">Subnit</button> -->
+               </div>
+               <br>
+            <div class="numOfFloor">
+                <input type="number" min="3" max="100" name="" id="numOfLifts" placeholder="Number of Lifts" style="width: 200px;">
+            </div><br>
+            <button onclick="numOfLifts()">Submit</button>
+        </header>
         <main>
+        
             <div class="main" id="main">
                 <!-- <div class="system"> -->
                 <div class="lifts" id="lifts">
@@ -35,7 +44,7 @@
                 <div class="Maintenance">
                     <div class="buttons" id="buttons">
                         <!-- <div class="button" >6 <button id="6" class="btn" onclick="slider(id)"><span style="width: 100px;">🔼</span></button></div> -->
-                        <div class="button" id="btn5">5 <button id="5" class="btn" onclick="slider(id)">🔼</button></div>
+                        <!-- <div class="button" id="btn5">5 <button id="5" class="btn" onclick="slider(id)">🔼</button></div> -->
                         <div class="button" id="btn4">4 <button id="4" class="btn" onclick="slider(id)">🔼</button><button id="4" class="btn" onclick="slider(id)">🔽</button></div>
                         <div class="button" id="btn3">3<button id="3" class="btn" onclick="slider(id)">🔼</button><button id="3" class="btn" onclick="slider(id)">🔽</button></div>
                         <div class="button" id="btn2">2<button id="2" class="btn" onclick="slider(id)">🔼</button><button id="2" class="btn" onclick="slider(id)">🔽</button></div>
