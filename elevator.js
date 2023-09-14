@@ -64,7 +64,7 @@ function repeat(repeatLift) {
 
         function repeatFloor(){
             for(let j=6;j<=numOfBtn;j++){
-        let html1=` <div class="floor" id="lift${id}-${j}">${j}</div>`;
+        let html1=` <div class="floor" id="lift${id}-${j}"><span class='up'> ${j}</span></div>`;
         document.getElementById(`lift${id}`).insertAdjacentHTML('afterbegin', html1);
             }
         }

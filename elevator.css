@@ -169,3 +169,6 @@
     width: 14px;
     height: 16px;
   }
+.up{
+    z-index: 1;
+}
