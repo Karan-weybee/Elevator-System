@@ -7,7 +7,12 @@ var rolar1DeActive = 0;
 var numOfBtn=5;
 var repeatLift =3;
 var repeatLiftRolar=repeatLift;
-
+document.addEventListener('keydown',function(event){
+    if(event.key == 'Enter'){
+        event.preventDefault();
+        numOfLifts();
+    }
+})
 function numOfLifts()
 {
     let ans = document.getElementById('numOfFloor').value;
