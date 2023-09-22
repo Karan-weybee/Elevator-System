@@ -197,7 +197,7 @@ function slider(id) {
             } else {
                 pos -= 97;
                 document.getElementById(`rolar${r_No}`).style.marginTop = `${pos}px`;
-                document.getElementById(`rolar${r_No}`).style.transitionDuration = `${diff / 97}s`;
+                document.getElementById(`rolar${r_No}`).style.transitionDuration = `0.7s`;
                 console.log('position', pos);
 
             }
@@ -213,7 +213,7 @@ function slider(id) {
             } else {
                 pos += 97;
                 document.getElementById(`rolar${r_No}`).style.marginTop = `${pos}px`;
-                document.getElementById(`rolar${r_No}`).style.transitionDuration = `${diff / 97}s`;
+                document.getElementById(`rolar${r_No}`).style.transitionDuration = `0.7s`;
                 console.log('position', pos);
 
             }
